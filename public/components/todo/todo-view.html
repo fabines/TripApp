@@ -1,0 +1,24 @@
+<div class="container" id="main-container" ng-controller="todoCtrl">
+    <div class="row justify-content-md-center">
+        <div class="card">
+            <div class="card-header">
+                My name is: {{name}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Todo App:</h5>
+                <p class="card-text">Show a todo list</p>
+                <h5 ng-repeat="task in products">
+                    <button class="btn btn-primary" ng-click="removeItem($index)">X</button>
+                    {{task}}
+                </h5>
+                <input ng-model="addMe">
+                <button class="btn btn-primary" ng-click="addItem()">Add</button>
+                <p>{{errortext}}</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

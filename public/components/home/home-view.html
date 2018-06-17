@@ -1,0 +1,120 @@
+<!-- ng-controller -> select your controller -->
+<div class="container" id="main-container" ng-controller="homeCtrl">
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <h5> Hello {{userName}}</h5>
+            <div class="card" ng-hide="hideLogin">
+                <div class="card-header">
+                    <h5>Hello guest, please log in</h5>
+                </div>
+                <div class="card-body">
+                    <div class="container" id="login">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <label for="username">Username:</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                                   ng-model="username" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="password">Password:</label>
+                                            <input type="password" class="form-control" id="password"
+                                                   ng-model="password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-12">
+                                            <button class="btn btn-primary" ng-click="login()">Log in</button>
+                                            <button class="btn btn-primary" ng-click="register()">Register</button>
+                                        </div>
+                                    </div>
+                                    <a href="#">Forgot password</a>
+
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-md-3 container">
+                                    <img src="../../assets/info.png" width="50">
+                                </div>
+                                <p>
+                                    Registered users get a lot of benefits like saving trip locations for later viewing.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    Points of Interest
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 point" ng-repeat="point in pop_points">
+                                <a href="">
+                                    <img class="rounded" ng-src="{{point.Picture}}" data-toggle="modal" data-target="#modal" ng-click="select($index)">
+                                </a>
+
+                                <p class="hebrew">{{point.PointName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">{{pop_points[selected].PointName}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img ng-src="{{pop_points[selected].Picture}}">
+                            <div class="row hebrew">
+                                <p>{{pop_points[selected].Description}}</p>
+                            </div>
+                            <div class="row hebrew">
+                                <p><span>{{pop_points[selected].RateInPrec}}</span>% :דירוג באחוזים</p>
+                            </div>
+                            <div class="row hebrew">
+                                <p><span>{{pop_points[selected].ViewNum}}</span> :מספר צפיות</p>
+                            </div>
+                            <div class="icon">
+                                <img ng-src="../../assets/glyph-iconset-master/svg/{{color}}Heart.svg" class="icon" ng-click="change()">
+                            </div>
+                            <div>
+                                <div class="row hebrew" style="margin-bottom: 10px;"> :תגובות </div>
+                                <div class="row hebrew" style="border-bottom: 1px solid #CECECE; margin: 0px;"> דשגדשגגגדשגדשדשגגדשגדש :YOSI </div>
+
+                                <div class="row hebrew"> הוסף תגובה </div>
+                                <div class="row hebrew">
+                                    <button ng-click="addComment($event);">שלח</button><input type="textarea" id="commentBox" ng-model="commentText" >
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,20 @@
+html {
+  overflow-y: scroll;
+}
+
+#main-container{
+  padding-top: 2em;
+
+}
+
+#main-carousel{
+  width: 50em;
+  height: 30em;
+}
+
+.hebrew{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+

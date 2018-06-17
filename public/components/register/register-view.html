@@ -1,0 +1,115 @@
+<div class="container" id="main-container" ng-controller="registerCtrl">
+    <div class="row justify-content-md-center">
+        <div class="card">
+            <div class="card-header">
+                Register
+            </div>
+            <div class="card-body">
+
+                <form ng-submit="submitForm()">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name1">First name</label>
+                            <input type="text" class="form-control" id="name1" placeholder="First name"
+                                   ng-model="user.firstname" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="name2">Last name</label>
+                            <input type="text" class="form-control" id="name2" placeholder="Last name"
+                                   ng-model="user.lastname" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="" ng-model="user.email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="" ng-model="user.username" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder=""
+                                   ng-model="user.password" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="" ng-model="user.city" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="country">Country</label>
+                            <select class="form-control" id="country" ng-model="user.country" ng-options="x for x in countries" required>
+                                <option value="" selected="selected">Please choose a country</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="question1">Confirmation Question</label>
+                        <select class="form-control" id="question1" ng-model="user.question1" ng-options="x for x in questions" required>
+                            <option value="" selected="selected">Please choose a question</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="answer1">Answer</label>
+                        <input type="text" class="form-control" id="answer1" placeholder="" ng-model="user.answer1" required>
+                    </div>
+                </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="question2">Confirmation Question</label>
+                            <select class="form-control" id="question2" ng-model="user.question2" ng-options="x for x in questions" required>
+                                <option value="" selected="selected">Please choose a question</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="answer2">Answer</label>
+                            <input type="text" class="form-control" id="answer2" placeholder="" ng-model="user.answer2" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label>Please choose categories you're interested in:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="catgory0" ng-model="user.selected_categories[0]">
+                                <label class="custom-control-label" for="catgory0">{{categories[0].name}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="catgory1" ng-model="user.selected_categories[1]">
+                                <label class="custom-control-label" for="catgory1">{{categories[1].name}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="catgory2" ng-model="user.selected_categories[2]">
+                                <label class="custom-control-label" for="catgory2">{{categories[2].name}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="catgory3" ng-model="user.selected_categories[3]">
+                                <label class="custom-control-label" for="catgory3">{{categories[3].name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <img src="../../assets/loading.gif" width="50" height="50" ng-hide="loading">
+                </form>
+
+                <h5>{{status}}</h5>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
