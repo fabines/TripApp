@@ -13,6 +13,10 @@ app.config(['$routeProvider',
             templateUrl: 'components/todo/todo-view.html',
             controller: 'todoCtrl'
         }).
+        when('/points', {
+            templateUrl: 'components/points/points-view.html',
+            controller: 'pointsCtrl'
+        }).
         when('/register', {
             templateUrl: 'components/register/register-view.html',
             controller: 'registerCtrl'

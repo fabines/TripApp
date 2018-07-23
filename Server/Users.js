@@ -208,16 +208,17 @@ router.post('/answerQues/:username', function (req, res) {
 
 //cheking token when require login people
 router.use('/log', function (req, res, next) {
-    var token = req.body.token || req.query.token || req.header['x-access-token'];
-
+    var token = req.body.token || req.query.token || req.get('Authorization');
+    console.log("Token: "+token);
     if (token) {
-        jwt.verify(token, 'secret', function (err, decoded) {
+        jwt.verify(token, 'secret', function (err, decoded) {22
             if (err) {
                 return res.json({ success: false, message: 'Failed to authenticate token' });
             }
             else {
                 var decoded = jwt.decode(token, { complete: true });
                 req.decode = decoded;
+                console.log("hoorey?");
                 next();
             }
         });
@@ -415,7 +416,7 @@ router.get('/log/categories/:username', function (req, res) {
 });
 
 //return all the favourite points of the user-- need to check
-router.get('/log/getFavourite/:username', function (req, res) {
+router.post('/log/getFavourite/:username', function (req, res) {
     var username = req.param('username');
 
     var query = squel.select().from("Favorites")
@@ -553,7 +554,7 @@ router.post('/ratePoint/:pointId', function (req, res) {
 
 });
 //--------------------------------------------------rate-----------------------
-router.get('/ratePoint/:pointId', function (req, res) {
+router.get('/log/ratePoint/:pointId', function (req, res) {
     var point=req.param('pointId');
     var query = squel.select()
         .from("UserRate")
@@ -574,7 +575,7 @@ router.get('/ratePoint/:pointId', function (req, res) {
     });
 });
 //---------------------------------------review------------------------------------------
-router.post('/reviewPoint/:pointId', function (req, res) {
+router.post('/log/reviewPoint/:pointId', function (req, res) {
     var pointId = req.param('pointId');
     var username = req.body.Username;
     var review = req.body.Review;
@@ -636,7 +637,7 @@ router.post('/reviewPoint/:pointId', function (req, res) {
 router.get('/reviewPoint/:pointId', function (req, res) {
     var point=req.param('pointId');
     var query = squel.select()
-        .from("UserRate").field("Review")
+        .from("UserRate")
         .where("PointId='"+point+"'")
         .toString();
     DButilsAzure.execQuery(query).then(function (resParam) {
@@ -652,24 +653,32 @@ router.get('/reviewPoint/:pointId', function (req, res) {
         res.send({ status: "`failed", response: resParam });
     });
 });
+//-----------------------------------------favorites------------------------------------
+
+//get points by username
+
 
 
 //delete pointofinterest from favorites
 
-router.delete('/log/removePoint', function (req,res) {
+router.post('/log/removePoint', function (req,res) {
+    console.log("in delete");
     var delPoint = req.body.PointId;
+    var username = req.body.Username;
     if(!req.body.PointId){
         res.send("please enter id to delete");
         return;
     }
     console.log(delPoint);
     var query = squel.select().from("Favorites")
+        .where("Username='"+username+"'")
         .where("PointId='"+delPoint+"'")
         .toString();
     DButilsAzure.execQuery(query)
         .then(function (result) {
             if(result.length>0) {
                 var query = squel.delete().from("Favorites")
+                    .where("Username='"+username+"'")
                     .where("PointId='"+delPoint+"'")
                     .toString();
                 console.log(query);
