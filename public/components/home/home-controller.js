@@ -11,7 +11,7 @@ angular.module('tripApp')
         $scope.color = "grey";
         $scope.FavCounter = $scope.favPointIds.length;
         $scope.token = window.sessionStorage.getItem('token');
-        $scope.connected = window.sessionStorage.getItem('loggedIn');
+        $scope.connected = window.sessionStorage.getItem('connected');
 
         $scope.userName = window.sessionStorage.getItem('userName');
         $scope.register = function () {
@@ -118,7 +118,7 @@ angular.module('tripApp')
                 if (success) {
 
                     window.sessionStorage.setItem('token', token);
-                    window.sessionStorage.setItem('loggedIn', true);
+                    window.sessionStorage.setItem('connected', $scope.connected);
                     window.sessionStorage.setItem('userName', $scope.username);
                     $scope.userName = $scope.username;
                     $scope.connected = true;
@@ -249,4 +249,11 @@ angular.module('tripApp')
             });
             getPoints();
         }
+
+
+        $scope.signOut =function(){
+            window.sessionStorage.clear();
+            $window.location.href = '/#!/about';
+            $window.location.href = '/#!/home';
+        };
     });

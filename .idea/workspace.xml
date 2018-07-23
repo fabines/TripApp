@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e80ff00-758e-4929-92cf-623e1808bcc6" name="Default" comment="23.7.2018 13:14">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/components/home/home-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/components/home/home-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/components/home/home-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/components/home/home-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/components/home/home-css.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/components/home/home-css.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/components/home/home-css.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/components/home/home-css.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/components/home/home-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/components/home/home-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/includes/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/includes/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,19 +16,33 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="home-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/components/home/home-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="187" column="81" selection-start-line="187" selection-start-column="81" selection-end-line="187" selection-end-column="81" />
+            <state relative-caret-position="187">
+              <caret line="80" column="123" selection-start-line="80" selection-start-column="123" selection-end-line="80" selection-end-column="123" />
               <folding>
                 <element signature="e#808#815#1" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#6;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#form#0;n#div#2;n#div#6;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/includes/navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -48,38 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iconwc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/iconwc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="127">
+              <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -87,8 +68,8 @@
       <file leaf-file-name="home-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/components/home/home-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2737">
-              <caret line="179" column="29" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+            <state relative-caret-position="298">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -132,12 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ng-click</find>
-      <find>change</find>
-      <find>selected</find>
-      <find>pop_points</find>
-      <find>selectedPoint</find>
-      <find>lastPoints</find>
       <find>setFav</find>
       <find>RecoPoints</find>
       <find>/log/</find>
@@ -161,12 +136,23 @@
       <find>review</find>
       <find>input</find>
       <find>Sa</find>
+      <find>sear</find>
+      <find>logg</find>
+      <find>search</find>
       <find>button</find>
+      <find>sess</find>
+      <find>local</find>
+      <find>sign</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
   </component>
   <component name="IdeDocumentHistory">
@@ -189,13 +175,13 @@
         <option value="$PROJECT_DIR$/public/includes/disconnected-view.html" />
         <option value="$PROJECT_DIR$/public/includes/connected-view.html" />
         <option value="$PROJECT_DIR$/public/components/index-controller.js" />
-        <option value="$PROJECT_DIR$/public/includes/navbar.html" />
         <option value="$PROJECT_DIR$/Server/Users.js" />
         <option value="$PROJECT_DIR$/public/app.js" />
+        <option value="$PROJECT_DIR$/public/components/home/home-css.scss" />
+        <option value="$PROJECT_DIR$/public/includes/navbar.html" />
         <option value="$PROJECT_DIR$/public/index-controller.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/components/home/home-view.html" />
-        <option value="$PROJECT_DIR$/public/components/home/home-css.scss" />
         <option value="$PROJECT_DIR$/public/components/home/home-controller.js" />
       </list>
     </option>
@@ -238,6 +224,25 @@
               <item name="AngProj" type="b2602c69:ProjectViewProjectNode" />
               <item name="AngProj" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngProj" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngProj" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AngProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AngProj" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngProj" type="b2602c69:ProjectViewProjectNode" />
@@ -315,37 +320,54 @@
       <workItem from="1529830263807" duration="6000" />
       <workItem from="1530952949615" duration="4392000" />
       <workItem from="1531396466718" duration="888000" />
-      <workItem from="1531422197442" duration="114451000" />
+      <workItem from="1531422197442" duration="122997000" />
     </task>
+    <task id="LOCAL-00001" summary="23.7.2018 13:14">
+      <created>1532341042014</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532341042014</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170337000" />
+    <option name="totallyTimeSpent" value="178883000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.3298969" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.18213059" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3298969" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1904762" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="7" sideWeight="0.49959514" weight="0.3291592" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3298969" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50040483" side_tool="true" weight="0.28264758" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49959514" weight="0.3291592" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.18067978" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49959514" weight="0.3291592" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19757085" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3298969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28350514" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49959514" weight="0.28264758" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,20 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/components/register/register-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="63" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/includes/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/iconwc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -556,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Points.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="147" column="28" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -570,10 +571,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index-controller.js">
+    <entry file="file://$PROJECT_DIR$/Server/Points.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="-102">
+          <caret line="147" column="28" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -584,17 +585,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/components/home/home-controller.js">
+    <entry file="file://$PROJECT_DIR$/public/components/register/register-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="179" column="29" selection-start-line="179" selection-start-column="29" selection-end-line="179" selection-end-column="29" />
+        <state relative-caret-position="308">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/components/home/home-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="187" column="81" selection-start-line="187" selection-start-column="81" selection-end-line="187" selection-end-column="81" />
+        <state relative-caret-position="187">
+          <caret line="80" column="123" selection-start-line="80" selection-start-column="123" selection-end-line="80" selection-end-column="123" />
           <folding>
             <element signature="e#808#815#1" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#6;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
@@ -604,10 +612,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/components/home/home-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="127">
+          <caret line="71" column="51" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/includes/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="70" lean-forward="true" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
         </state>
       </provider>
     </entry>
