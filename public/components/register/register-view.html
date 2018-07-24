@@ -1,12 +1,14 @@
 <div class="container" id="main-container" ng-controller="registerCtrl">
     <div class="row justify-content-md-center">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header" style="color:blue; font-size: 30px; text-align:center; font-family:Comic Sans MS; font-weight: bold;
+            ">
                 Register
             </div>
             <div class="card-body">
 
-                <form ng-submit="submitForm()">
+                <form >
+                    
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="name1">First name</label>
@@ -51,7 +53,7 @@
                     <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="question1">Confirmation Question</label>
-                        <select class="form-control" id="question1" ng-model="user.question1" ng-options="x for x in questions" required>
+                        <select class="form-control" id="question1" ng-model="user.question1" ng-options="x for x in questionsName" required>
                             <option value="" selected="selected">Please choose a question</option>
                         </select>
                     </div>
@@ -63,7 +65,7 @@
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
                             <label for="question2">Confirmation Question</label>
-                            <select class="form-control" id="question2" ng-model="user.question2" ng-options="x for x in questions" required>
+                            <select class="form-control" id="question2" ng-model="user.question2" ng-options="x for x in questionsName" required>
                                 <option value="" selected="selected">Please choose a question</option>
                             </select>
                         </div>
@@ -78,30 +80,30 @@
                         </div>
                         <div class="col-md-6">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="catgory0" ng-model="user.selected_categories[0]">
-                                <label class="custom-control-label" for="catgory0">{{categories[0].name}}</label>
+                                <input type="checkbox" class="custom-control-input" id="catgory0" ng-model="user.selected_categories[0]" ng-init="user.selected_categories[0]=false">
+                                <label class="custom-control-label" for="catgory0"   >{{categories[0].category}}</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="catgory1" ng-model="user.selected_categories[1]">
-                                <label class="custom-control-label" for="catgory1">{{categories[1].name}}</label>
+                                <input type="checkbox" class="custom-control-input" id="catgory1" ng-model="user.selected_categories[1]" ng-init="user.selected_categories[1]=false">
+                                <label class="custom-control-label" for="catgory1">{{categories[1].category}}</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="catgory2" ng-model="user.selected_categories[2]">
-                                <label class="custom-control-label" for="catgory2">{{categories[2].name}}</label>
+                                <input type="checkbox" class="custom-control-input" id="catgory2" ng-model="user.selected_categories[2]" ng-init="user.selected_categories[2]=false">
+                                <label class="custom-control-label" for="catgory2">{{categories[2].category}}</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="catgory3" ng-model="user.selected_categories[3]">
-                                <label class="custom-control-label" for="catgory3">{{categories[3].name}}</label>
+                                <input type="checkbox" class="custom-control-input" id="catgory3" ng-model="user.selected_categories[3]" ng-init="user.selected_categories[3]=false">
+                                <label class="custom-control-label" for="catgory3">{{categories[3].category}}</label>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <button class="btn btn-primary" ng-click="submitForm()" >Submit form</button>
                     <img src="../../assets/loading.gif" width="50" height="50" ng-hide="loading">
                 </form>
 

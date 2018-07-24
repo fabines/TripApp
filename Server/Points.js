@@ -53,6 +53,28 @@ router.get('/category/:category', function (req, res) {
     });
 });
 
+//get categoryName
+router.get('/categories', function (req, res) {
+
+    var query = squel.select().from("Category")
+        .toString();
+    DButilsAzure.execQuery(query).then(function (resParam) {
+        if (resParam.length == 0) {
+            res.send({ status: "failed", response: "There are no points for these category." });
+        }
+        //save the permission type to know what action the user can do
+        else {
+            res.send({ status: "OK", response: resParam });
+        }
+    }).catch(function (resParam) {
+        console.log('Failed to excute');
+        res.send({ status: "`failed", response: resParam });
+    });
+});
+
+
+
+
 //return points by pointID
 router.get('/getPointbyid/:pointId', function (req, res) {
     var pointNum=req.param('pointId');
@@ -152,7 +174,7 @@ router.post('/rate/:pointId',function (req,res) {
          .then(function (resParam) {
          console.log(resParam);
          var ratePer=(resParam[0].avg *100)/5;
-         console.log(ratePer);
+         console.log('ratePer: ' +ratePer);
           var query2="UPDATE PointOfInterest SET RateInPrec = '"+ratePer+"' WHERE PointId = '"+pointid+"'";
           DButilsAzure.execQuery(query2).then(function (resParam) {
               res.send({ status: "ok", response: resParam });

@@ -18,14 +18,18 @@ angular.module('tripApp')
             $window.location.href = '#!/register';
         };
 
+        $scope.forget=function(){
+            $window.location.href='#!/forget'
+        }
+
 
         $scope.GoToFavList = function(){
-            $window.location.href = '/#!/todo';
+            $window.location.href = '/#!/favorite';
         }
 
         $scope.select = function (point) {
             $scope.selectedPoint = point;
-            alert("Selected: "+$scope.selectedPoint.PointId+" name: "+$scope.selectedPoint.PointName + "coordinates: "+$scope.selectedPoint.Coordinates);
+
             if($scope.favPointIds.includes($scope.selectedPoint.PointId)) $scope.color="red";
             else $scope.color="grey";
             $scope.Map($scope.selectedPoint.Coordinates, $scope.selectedPoint.Description);
@@ -34,8 +38,9 @@ angular.module('tripApp')
             $http.get(`Users/reviewPoint/${$scope.selectedPoint.PointId}`).then((res) => {
                 $scope.commentText = "";
                 $scope.reviews = [];
+
                 $scope.reviews = res.data.response;
-                alert($scope.reviews.map(r=>r.Username));
+
             });
         };
 
@@ -57,7 +62,7 @@ angular.module('tripApp')
             if (!$scope.connected) alert("You need to log in, in order to use this functionality!");
             else {
                 if (!$scope.favPointIds.includes($scope.selectedPoint.PointId)) {
-                    alert("in add")
+
                     var url = `Users/log/insertFavourite/${$scope.username}/point/${$scope.selectedPoint.PointId}`;
                     var options = {headers: {'Authorization': $scope.token}};
                     $http.post(url, "", options).then((response) => {
@@ -70,7 +75,7 @@ angular.module('tripApp')
                     });
                 }
                 else {
-                    alert("deleting "+$scope.selectedPoint.PointId);
+
                     var payload = {
                         PointId: $scope.selectedPoint.PointId,
                         Username: $scope.userName,
@@ -91,18 +96,23 @@ angular.module('tripApp')
         };
 
         $scope.setFavPoints = function() {
-            alert("in fav points func");
+
             var payload = {
                 token: window.sessionStorage.getItem('token')
             }
             $http.post(`/Users/log/getFavourite/${$scope.userName}`, JSON.stringify(payload)).then((response) => {
-                $scope.favPoints = response.data.response.map(favp => $scope.points.find(p => p.PointId == favp.PointId));
-                $scope.favPointIds = $scope.favPoints.map(favp => favp.PointId);
-                $scope.FavCounter = $scope.favPointIds.length;
-                alert($scope.favPointIds);
-                alert("fav points: "+$scope.favPoints.map(p=>p.PointId));
-                $scope.lastPoints = $scope.favPoints.sort((a,b)=>b.id-a.id).splice(0,2);
-                $scope.RecoPoints();
+                if(response.data.status=="failed"){
+                    alert(response.data.response)
+                }
+                else {
+                    $scope.favPoints = response.data.response.map(favp => $scope.points.find(p => p.PointId == favp.PointId));
+                    $scope.favPointIds = $scope.favPoints.map(favp => favp.PointId);
+                    $scope.FavCounter = $scope.favPointIds.length;
+
+
+                    $scope.lastPoints = $scope.favPoints.sort((a, b) => b.id - a.id).splice(0, 2);
+                    $scope.RecoPoints();
+                }
             }).catch((res) => {
                 alert("ERROR loading user favorites "+res);
             });
@@ -118,13 +128,15 @@ angular.module('tripApp')
                 if (success) {
 
                     window.sessionStorage.setItem('token', token);
-                    window.sessionStorage.setItem('connected', $scope.connected);
+                    window.sessionStorage.setItem('connected', 'true');
                     window.sessionStorage.setItem('userName', $scope.username);
                     $scope.userName = $scope.username;
                     $scope.connected = true;
                     $scope.token = token;
                     $scope.setFavPoints();
                     //$scope.RecoPoints();
+                    $('.register').hide();
+
 
 
 
@@ -145,7 +157,7 @@ angular.module('tripApp')
 
         $scope.SaveChanges = function(){
             if($scope.rate){
-                alert($scope.rate);
+
                 var payload = {
                     Username : $scope.userName,
                     Rate : $scope.rate
@@ -155,6 +167,7 @@ angular.module('tripApp')
                         alert("calculation done"+ res.data.response);
                     })
                    alert("thank you for rating, changes saved");
+                    $scope.reviews = [];
                 });
             }
         }
@@ -163,11 +176,11 @@ angular.module('tripApp')
         $scope.Map = function(coordinates, desc){
 
             mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0aWZhYmluIiwiYSI6ImNqang4MWVqMzJtZmszcm1haHZ2YnE3ZW4ifQ.j1oCmbRDDZH46yJhQH39bg';
-            alert("coordinates: "+coordinates);
+
             var coordinatesArr = coordinates.split(',');
             var coordinateEast = parseFloat(coordinatesArr[0]);
             var coordinateNorth = parseFloat(coordinatesArr[1]);
-            alert("North: "+typeof (coordinateNorth) + "North= "+ coordinateNorth+ "East: "+typeof (coordinateEast) + "East= "+ coordinateEast)
+
             var monument = [coordinateNorth , coordinateEast]; //change to coordinates from server
             //var coordinates = document.getElementById('coordinates');
             var map = new mapboxgl.Map({
@@ -191,7 +204,7 @@ angular.module('tripApp')
 
 //get recommended points using most rated points by usercategories
         $scope.RecoPoints = function () {
-            alert("in func");
+
             var options = {headers: {'Authorization': $scope.token}};
             $http.get(`Users/log/categories/${$scope.userName}`, options).then((res) => {
                 var categories = res.data.response.map(cat => cat.CategoryId);
@@ -238,7 +251,7 @@ angular.module('tripApp')
                 r = Math.floor(Math.random() * ($scope.pop_points.length - 2));
                 //$scope.pop_points = $scope.pop_points.slice(r, r + 3);
             }).then((res)=>{
-                alert($scope.points.map(p=>p.PointId));
+
 
                 $scope.setFavPoints();
             });

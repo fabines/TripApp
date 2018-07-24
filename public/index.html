@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset=utf-8">
+  <!--  <meta charset="utf-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -10,7 +11,9 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="components/home/home-css.css">
-
+    <link rel="stylesheet" href="components/favorite/favorite-css.css">
+    <link rel="stylesheet" href="components/points/points-css.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
     <!--map-->
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -21,14 +24,14 @@
 
     <title>Trip Adviser</title>
 </head>
-<body ng-app="tripApp" ng-controller="indexCtrl as indexCtrl">
+<body ng-app="tripApp">
 
 <!-- get all angular modules -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
 <!--<div ng-include="'includes/navbar.html'"></div> <!-- include navbar html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="indexCtrl as indexCtrl">
     <div class="container">
         <a class="navbar-brand" href="#">Trip Adviser {{name}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,27 +44,13 @@
                     <a class="nav-link" href="#!main">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!todo">Todo App</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#!points">Points of Interests</a>
                 </li>
-                <li class="nav-item" ng-hide="indexCtrl.connected">
+                <li class="nav-item register" ng-hide="connected">
                     <a class="nav-link" href="#!register">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#!about">About</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
                 </li>
             </ul>
 
@@ -74,9 +63,11 @@
 <script src="app.js"></script>
 <script src="index-controller.js"></script>
 <script src="components/home/home-controller.js"></script>
-<script src="components/todo/todo-controller.js"></script>
 <script src="components/points/points-controller.js"></script>
 <script src="components/register/register-controller.js"></script>
+<script src="components/forgotPassword/forgotPassword-controller.js"></script>
+<script src="components/favorite/favorite-controller.js"></script>
+<!--<script src="components/favorite/favorite-controller.js"></script>-->
 <!-- get all bootstrap modules -->
 </body>
 </html>

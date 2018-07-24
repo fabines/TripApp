@@ -9,9 +9,9 @@ app.config(['$routeProvider',
             templateUrl: 'components/home/home-view.html',
             controller: 'homeCtrl'
         }).
-        when('/todo', {
-            templateUrl: 'components/todo/todo-view.html',
-            controller: 'todoCtrl'
+        when('/forget',{
+            templateUrl:'components/forgotPassword/forgotPassword-view.html',
+            controller:'forgetCtrl'
         }).
         when('/points', {
             templateUrl: 'components/points/points-view.html',
@@ -24,6 +24,10 @@ app.config(['$routeProvider',
         when('/about', {
             templateUrl: 'components/about/about-view.html',
             controller: 'aboutCtrl'
+        }).
+        when('/favorite',{
+            templateUrl: 'components/favorite/favorite-view.html',
+            controller: 'favoriteCtrl'
         }).
         otherwise({
             redirectTo: '/home'
