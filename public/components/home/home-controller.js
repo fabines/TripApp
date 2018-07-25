@@ -63,10 +63,11 @@ angular.module('tripApp')
             else {
                 if (!$scope.favPointIds.includes($scope.selectedPoint.PointId)) {
 
-                    var url = `Users/log/insertFavourite/${$scope.username}/point/${$scope.selectedPoint.PointId}`;
+                    var url = `Users/log/insertFavourite/${$scope.userName}/point/${$scope.selectedPoint.PointId}`;
                     var options = {headers: {'Authorization': $scope.token}};
                     $http.post(url, "", options).then((response) => {
                         $scope.favPoints.push($scope.selectedPoint);
+
                         $scope.favPointIds.push($scope.selectedPoint.PointId);
                         $scope.FavCounter = $scope.favPointIds.length;
                         $scope.color="red";

@@ -14,6 +14,9 @@ angular.module('tripApp').controller('pointsCtrl', function ($scope, $http, $win
     $scope.searchText = "";
     $scope.FavCounter = $scope.favPointIds.length;
     $scope.reviews = [];
+    $scope.color = "grey";
+    $scope.token = window.sessionStorage.getItem('token');
+
 
     $scope.search = function () {
         $scope.pointSort=true;
@@ -85,7 +88,7 @@ angular.module('tripApp').controller('pointsCtrl', function ($scope, $http, $win
         else {
             if (!$scope.favPointIds.includes($scope.selectedPoint.PointId)) {
 
-                var url = `Users/log/insertFavourite/${$scope.username}/point/${$scope.selectedPoint.PointId}`;
+                var url = `Users/log/insertFavourite/${$scope.userName}/point/${$scope.selectedPoint.PointId}`;
                 var options = {headers: {'Authorization': $scope.token}};
                 $http.post(url, "", options).then((response) => {
                     $scope.favPoints.push($scope.selectedPoint);
